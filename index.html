@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Bar & Restaurant by vasquito | Goan-Portuguese Fusion, Old Goa</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Experience the finest Goan-Portuguese fusion cuisine curated by Chef Vasquito in Ella, Old Goa. An intimate 25-cover dining experience featuring Crispy Pork, Marisco A Bulhao Pato, and bespoke cocktails.">
+    <meta name="keywords" content="Ana Bar and Restaurant, Vasquito, Goan Portuguese restaurant, Old Goa food, Crispy Pork Goa, Ella restaurant, Goan cocktails, boutique dining Goa">
+    <meta name="author" content="Ana Bar & Restaurant">
+    <meta property="og:title" content="Ana Bar & Restaurant by vasquito | Goan-Portuguese Fusion, Old Goa">
+    <meta property="og:description" content="Intimate 25-cover culinary gem by Chef Vasquito in Old Goa. Reserve your table today for a unique dining adventure.">
+    <meta property="og:image" content="assets/hero_bg.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+    <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+    <!-- Preloader Screen -->
+    <div class="preloader" id="preloader-screen">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <span class="p-title">Ana</span>
+                <span class="p-sub">by vasquito</span>
+            </div>
+            <div class="preloader-progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="preloader-status" id="preloader-status-text">Stoking the woodfire...</span>
+        </div>
+    </div>
+
+    <!-- Floating Ambient Player -->
+    <div class="ambient-player" id="ambient-player-widget">
+        <button class="player-toggle-btn" id="player-play-btn" aria-label="Toggle ambient music">
+            <div class="player-disk">
+                <i class="fa-solid fa-music"></i>
+            </div>
+        </button>
+        <div class="player-expanded-panel" id="player-expanded-panel">
+            <div class="player-info">
+                <h4>Vibe Synth</h4>
+                <p id="synth-status">Goan Guitar & Sea Breeze</p>
+            </div>
+            <div class="sound-equalizer" id="equalizer-bars">
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Taste Matcher Trigger -->
+    <div class="sommelier-trigger" id="sommelier-trigger-widget">
+        <button class="sommelier-btn btn-gold" id="btn-sommelier-launch" aria-label="Open Culinary Pairing Engine">
+            <i class="fa-solid fa-wine-glass-empty"></i>
+            <span>Taste Matcher</span>
+        </button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="site-header">
+        <div class="header-container">
+            <a href="#" class="logo-area" id="logo-link">
+                <span class="brand-title">Ana</span>
+                <span class="brand-subtitle">by vasquito</span>
+            </a>
+            
+            <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav class="main-navigation" id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#story" class="nav-link" id="nav-link-story">Our Story</a></li>
+                    <li><a href="#menu" class="nav-link" id="nav-link-menu">Menu</a></li>
+                    <li><a href="#vip-experience" class="nav-link" id="nav-link-vip">VIP Timeline</a></li>
+                    <li><a href="#reserve" class="nav-link" id="nav-link-reserve">Reservations</a></li>
+                    <li><a href="#gallery" class="nav-link" id="nav-link-gallery">Gallery</a></li>
+                    <li><a href="#reviews" class="nav-link" id="nav-link-reviews">Reviews</a></li>
+                    <li><a href="#contact" class="nav-link" id="nav-link-contact">Find Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#reserve" class="btn btn-primary btn-sm" id="header-reserve-btn">Book a Table</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-content">
+                <div class="status-badge" id="status-badge">
+                    <span class="status-indicator-dot"></span>
+                    <span class="status-text" id="live-status-text">Loading status...</span>
+                </div>
+                <h1 class="hero-title animate-fade-in">Ana Bar & Restaurant</h1>
+                <p class="hero-subtitle animate-slide-up">Bespoke Goan-Portuguese Culinary Fusion by Chef Vasquito</p>
+                <p class="hero-tagline">An intimate 25-cover dining experience in the heart of Ella, Old Goa.</p>
+                <div class="hero-ctas animate-slide-up">
+                    <a href="#reserve" class="btn btn-primary" id="hero-book-btn">Book a Table</a>
+                    <a href="#menu" class="btn btn-secondary" id="hero-menu-btn">Explore Menu</a>
+                </div>
+            </div>
+            <div class="scroll-indicator" id="scroll-indicator">
+                <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+                <span class="scroll-label">Scroll to discover</span>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="story" id="story">
+            <div class="section-container">
+                <div class="grid grid-2-col">
+                    <div class="story-text-card reveal-on-scroll">
+                        <span class="section-badge">The Experience</span>
+                        <h2 class="section-title">A Curated Culinary Sanctuary</h2>
+                        <div class="divider"></div>
+                        <p class="story-p">
+                            Tucked away in the historic village of <strong>Ella, Old Goa</strong>, Ana is an intimate boutique restaurant designed for the true culinary explorer. Seating only 25 guests, Chef Vasquito blends local heritage flavors with timeless Portuguese culinary methods, crafting an unforgettable gastronomic journey.
+                        </p>
+                        <p class="story-p">
+                            Every dish tells a story of cultural convergence—using locally sourced coastal ingredients, house-spiced pork, fresh morning catches, and carefully guarded family recipes, served in a cozy, simple setting that prioritizes connection, flavor, and absolute warmth.
+                        </p>
+                        <div class="story-features">
+                            <div class="story-feat-item">
+                                <i class="fa-solid fa-chair text-gold"></i>
+                                <span>Intimate 25 Covers</span>
+                            </div>
+                            <div class="story-feat-item">
+                                <i class="fa-solid fa-utensils text-gold"></i>
+                                <span>Chef-Curated Recipes</span>
+                            </div>
+                            <div class="story-feat-item">
+                                <i class="fa-solid fa-seedling text-gold"></i>
+                                <span>Fresh Goan Produce</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-image-card reveal-on-scroll">
+                        <div class="image-frame">
+                            <div class="mosaic-img image-one" style="background-image: url('assets/hero_bg.png');">
+                                <div class="image-caption">Cozy Tavern Vibe</div>
+                            </div>
+                            <div class="mosaic-img image-two" style="background-image: url('assets/seafood_dish.png');">
+                                <div class="image-caption">Marisco A Bulhao Pato</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="menu" id="menu">
+            <div class="section-container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-badge">Culinary Offerings</span>
+                    <h2 class="section-title">The Curated Menu</h2>
+                    <p class="section-subtitle">Exquisite Goan-Portuguese fusion plates and handcrafted beverages</p>
+                    <div class="divider center"></div>
+                </div>
+
+                <!-- Menu Categories -->
+                <div class="menu-categories reveal-on-scroll" id="menu-categories-tabs">
+                    <button class="category-btn active" data-category="all" id="btn-cat-all">All Delicacies</button>
+                    <button class="category-btn" data-category="tapas" id="btn-cat-tapas">Tapas & Small Plates</button>
+                    <button class="category-btn" data-category="mains" id="btn-cat-mains">Mains</button>
+                    <button class="category-btn" data-category="desserts" id="btn-cat-desserts">Desserts</button>
+                    <button class="category-btn" data-category="drinks" id="btn-cat-drinks">Craft Cocktails</button>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="menu-grid" id="menu-items-grid">
+                    <!-- Dynamic rendering via app.js -->
+                </div>
+
+                <div class="menu-footer text-center reveal-on-scroll">
+                    <p class="menu-note"><i class="fa-solid fa-circle-info"></i> Prices range from ₹400–1,200 per dish. Standard pricing subject to tax. Inform us of any allergies before ordering.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIP Tasting Menu Chronology -->
+        <section class="vip-experience" id="vip-experience">
+            <div class="section-bg-fade"></div>
+            <div class="section-container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-badge text-gold">The Chef's Table</span>
+                    <h2 class="section-title text-white">Chef Vasquito's Tasting Menu</h2>
+                    <p class="section-subtitle">An exclusive 5-course chronological journey (4 seats per night)</p>
+                    <div class="divider center"></div>
+                </div>
+
+                <!-- VIP Timeline -->
+                <div class="timeline-container reveal-on-scroll">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-step left">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-card">
+                            <span class="timeline-course">Course I — Amuse-Bouche</span>
+                            <h3>Portuguese Lumpia Roll</h3>
+                            <p>Delicate chicken wrap, cold pressed ginger, coconut vinegar glaze. Paired with White Port Tonic.</p>
+                            <span class="timeline-time">19:15</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step right">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-card">
+                            <span class="timeline-course">Course II — Soup / Broth</span>
+                            <h3>Clam Bulhao Pato Soup</h3>
+                            <p>Reduced wine, emulsified sweet garlic, micro greens, coriander extraction. Warm toasted sourdough slice.</p>
+                            <span class="timeline-time">19:40</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step left">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-card">
+                            <span class="timeline-course">Course III — Small Plates</span>
+                            <h3>Double Glazed Pork Ends</h3>
+                            <p>Wood-fired jaggery glaze, Old Monk glaze brush, crisp scallion nest, chili salt.</p>
+                            <span class="timeline-time">20:10</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step right">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-card">
+                            <span class="timeline-course">Course IV — Signature Main</span>
+                            <h3>Crispy Pork & Choris Medley</h3>
+                            <p>Pork belly slice with blistered crackling, set on a bed of warm smoked choris rice and pickled pearl onions.</p>
+                            <span class="timeline-time">20:45</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step left">
+                        <div class="timeline-dot">5</div>
+                        <div class="timeline-card">
+                            <span class="timeline-course">Course V — Grand Dessert</span>
+                            <h3>Flambé Sticky Toffee Pudding</h3>
+                            <p>Traditional sponge pudding flambéed tableside with Goan jaggery syrup and dark feni, with rich vanilla bean cream.</p>
+                            <span class="timeline-time">21:20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section class="reserve" id="reserve">
+            <div class="section-bg-blend"></div>
+            <div class="section-container">
+                <div class="grid grid-2-col align-center">
+                    <div class="reserve-text-area reveal-on-scroll">
+                        <span class="section-badge text-gold">Reservations</span>
+                        <h2 class="section-title text-white">Secure Your Table</h2>
+                        <div class="divider"></div>
+                        <p class="text-light">
+                            Due to our intimate setting of only **25 covers**, we highly recommend booking in advance. Use the visual map selector on the right to claim your favorite spot in our tavern layout.
+                        </p>
+                        <div class="quick-info-list">
+                            <div class="info-item">
+                                <i class="fa-solid fa-clock text-gold"></i>
+                                <div>
+                                    <h4>Dining Hours</h4>
+                                    <p>Lunch: 12:00 PM – 3:30 PM</p>
+                                    <p>Dinner: 7:00 PM – 10:30 PM</p>
+                                    <p class="text-orange font-sm"><strong>Closed on Tuesdays</strong></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fa-solid fa-map-location-dot text-gold"></i>
+                                <div>
+                                    <h4>Table Selection</h4>
+                                    <p>Click on any table in the visual blueprint to select the seating zone automatically.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reservation form & visual planner -->
+                    <div class="reserve-form-card reveal-on-scroll">
+                        <div class="card-glass-header">
+                            <h3>Table Planner</h3>
+                            <p>Pick a table from the floor plan blueprint</p>
+                        </div>
+                        
+                        <!-- Visual Floor Plan blueprint -->
+                        <div class="floor-plan-wrapper">
+                            <svg viewBox="0 0 400 240" class="floor-plan-svg" id="floor-plan-svg-element">
+                                <!-- Tavern floor walls / bar boundary -->
+                                <rect x="5" y="5" width="390" height="230" rx="6" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+                                <!-- Kitchen area indicator -->
+                                <rect x="5" y="5" width="100" height="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                                <text x="55" y="30" fill="rgba(255,255,255,0.2)" font-size="8" text-anchor="middle">KITCHEN</text>
+                                
+                                <!-- Bar Area (Stools) -->
+                                <line x1="280" y1="5" x2="280" y2="70" stroke="rgba(214, 178, 76, 0.4)" stroke-width="3" />
+                                <text x="310" y="30" fill="rgba(214, 178, 76, 0.4)" font-size="8" transform="rotate(90 310 30)">BAR</text>
+                                
+                                <!-- Bar stools -->
+                                <g class="floor-table stool" data-table-id="Stool A" data-max="1" data-zone="Chef's Counter">
+                                    <circle cx="280" cy="15" r="7" class="table-outline" />
+                                    <circle cx="280" cy="15" r="4" class="table-fill" />
+                                </g>
+                                <g class="floor-table stool" data-table-id="Stool B" data-max="1" data-zone="Chef's Counter">
+                                    <circle cx="280" cy="32" r="7" class="table-outline" />
+                                    <circle cx="280" cy="32" r="4" class="table-fill" />
+                                </g>
+                                <g class="floor-table stool" data-table-id="Stool C" data-max="1" data-zone="Chef's Counter">
+                                    <circle cx="280" cy="49" r="7" class="table-outline" />
+                                    <circle cx="280" cy="49" r="4" class="table-fill" />
+                                </g>
+                                <g class="floor-table stool" data-table-id="Stool D" data-max="1" data-zone="Chef's Counter">
+                                    <circle cx="280" cy="66" r="7" class="table-outline" />
+                                    <circle cx="280" cy="66" r="4" class="table-fill" />
+                                </g>
+
+                                <!-- Window Alcove Tables (Cozy Window) -->
+                                <g class="floor-table rect-table" data-table-id="Table 1" data-max="4" data-zone="Cozy Indoor">
+                                    <rect x="25" y="140" width="30" height="20" rx="3" class="table-outline" />
+                                    <!-- Chairs representation -->
+                                    <circle cx="15" cy="150" r="3" class="chair" />
+                                    <circle cx="65" cy="150" r="3" class="chair" />
+                                    <circle cx="40" cy="130" r="3" class="chair" />
+                                    <circle cx="40" cy="170" r="3" class="chair" />
+                                    <text x="40" y="153" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle">T1</text>
+                                </g>
+                                
+                                <g class="floor-table rect-table" data-table-id="Table 2" data-max="4" data-zone="Cozy Indoor">
+                                    <rect x="90" y="140" width="30" height="20" rx="3" class="table-outline" />
+                                    <circle cx="80" cy="150" r="3" class="chair" />
+                                    <circle cx="130" cy="150" r="3" class="chair" />
+                                    <circle cx="105" cy="130" r="3" class="chair" />
+                                    <circle cx="105" cy="170" r="3" class="chair" />
+                                    <text x="105" y="153" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle">T2</text>
+                                </g>
+
+                                <!-- Center VIP Table -->
+                                <g class="floor-table round-table" data-table-id="Tasting Table" data-max="6" data-zone="Chef's Counter">
+                                    <circle cx="190" cy="100" r="22" class="table-outline" />
+                                    <!-- 6 chairs -->
+                                    <circle cx="190" cy="72" r="3.5" class="chair" />
+                                    <circle cx="190" cy="128" r="3.5" class="chair" />
+                                    <circle cx="164" cy="87" r="3.5" class="chair" />
+                                    <circle cx="216" cy="87" r="3.5" class="chair" />
+                                    <circle cx="164" cy="113" r="3.5" class="chair" />
+                                    <circle cx="216" cy="113" r="3.5" class="chair" />
+                                    <text x="190" y="103" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle">VIP</text>
+                                </g>
+
+                                <!-- Veranda Patio Tables -->
+                                <g class="floor-table round-table" data-table-id="Table 3" data-max="2" data-zone="Veranda Patio">
+                                    <circle cx="330" cy="130" r="14" class="table-outline" />
+                                    <circle cx="310" cy="130" r="3" class="chair" />
+                                    <circle cx="350" cy="130" r="3" class="chair" />
+                                    <text x="330" y="133" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle">P3</text>
+                                </g>
+                                <g class="floor-table round-table" data-table-id="Table 4" data-max="2" data-zone="Veranda Patio">
+                                    <circle cx="330" cy="190" r="14" class="table-outline" />
+                                    <circle cx="310" cy="190" r="3" class="chair" />
+                                    <circle cx="350" cy="190" r="3" class="chair" />
+                                    <text x="330" y="193" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle">P4</text>
+                                </g>
+                                
+                                <text x="330" y="95" fill="rgba(255,255,255,0.3)" font-size="8" text-anchor="middle">VERANDA</text>
+                                <line x1="290" y1="105" x2="370" y2="105" stroke="rgba(255,255,255,0.06)" stroke-dasharray="2" />
+                            </svg>
+                            <div class="floor-legend">
+                                <span><span class="leg-color available"></span>Available</span>
+                                <span><span class="leg-color selected"></span>Selected</span>
+                                <span><span class="leg-color reserved"></span>Reserved</span>
+                            </div>
+                            
+                            <!-- Finger friendly mobile quick select list -->
+                            <div class="mobile-blueprint-buttons" id="mobile-table-buttons">
+                                <span class="mb-label">Quick select table:</span>
+                                <div class="mb-grid" id="mobile-table-selector-grid"></div>
+                            </div>
+                        </div>
+
+                        <form id="reservation-form" class="reservation-form">
+                            <!-- Visual blueprint link indicator -->
+                            <div class="blueprint-sync-alert" id="blueprint-alert-text">
+                                <i class="fa-solid fa-circle-exclamation"></i> Click a table above to select seating zone & max capacity automatically.
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="res-name">Full Name</label>
+                                    <input type="text" id="res-name" required placeholder="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="res-phone">Phone Number</label>
+                                    <input type="tel" id="res-phone" required placeholder="099212 07175">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="res-date">Date</label>
+                                    <input type="date" id="res-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="res-time">Time Slot</label>
+                                    <select id="res-time" required>
+                                        <option value="" disabled selected>Select Slot</option>
+                                        <optgroup label="Lunch Sessions">
+                                            <option value="12:00 PM">12:00 PM</option>
+                                            <option value="1:00 PM">1:00 PM</option>
+                                            <option value="2:00 PM">2:00 PM</option>
+                                        </optgroup>
+                                        <optgroup label="Dinner Sessions">
+                                            <option value="7:00 PM">7:00 PM</option>
+                                            <option value="8:00 PM">8:00 PM</option>
+                                            <option value="9:00 PM">9:00 PM</option>
+                                            <option value="10:00 PM">10:00 PM</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="res-guests">Number of Guests</label>
+                                    <select id="res-guests" required>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2" selected>2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5 Guests</option>
+                                        <option value="6">6 Guests (Max)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="res-seating">Seating Preference</label>
+                                    <input type="text" id="res-seating" class="input-readonly" readonly value="Cozy Indoor" placeholder="Pick from blueprint">
+                                </div>
+                            </div>
+
+                            <!-- Hidden inputs for mapping selected values -->
+                            <input type="hidden" id="res-table-id" value="">
+
+                            <div class="form-group">
+                                <label for="res-notes">Special Requests (Optional)</label>
+                                <textarea id="res-notes" rows="2" placeholder="Birthday, food allergies, taste matcher pairing code, etc."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold btn-block" id="btn-submit-reservation">Confirm Booking</button>
+                        </form>
+
+                        <!-- Reservation Success Receipt -->
+                        <div class="booking-receipt" id="booking-receipt">
+                            <div class="receipt-success-icon">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h3>Reservation Confirmed!</h3>
+                            <p class="receipt-sub">See you at Ana Bar & Restaurant</p>
+                            <div class="receipt-divider"></div>
+                            
+                            <div class="receipt-details">
+                                <div class="detail-row">
+                                    <span>Guest Name:</span>
+                                    <strong id="rec-name">-</strong>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Date & Time:</span>
+                                    <strong id="rec-datetime">-</strong>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Party Size:</span>
+                                    <strong id="rec-guests">-</strong>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Seating & Table:</span>
+                                    <strong id="rec-seating">-</strong>
+                                </div>
+                                <div class="detail-row">
+                                    <span>Booking Reference:</span>
+                                    <strong id="rec-ref" class="text-gold">-</strong>
+                                </div>
+                            </div>
+                            <div class="receipt-divider"></div>
+                            <p class="receipt-disclaimer">A confirmation SMS has been sent to your phone. To modify/cancel, call 099212 07175.</p>
+                            <button class="btn btn-secondary btn-sm" id="btn-close-receipt">Book Another Table</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Atmosphere & Art</span>
+                    <h2 class="section-title">The Vibe Gallery</h2>
+                    <p class="section-subtitle">A glimpse of Chef Vasquito's curated plates and the warm setting</p>
+                    <div class="divider center"></div>
+                </div>
+
+                <div class="gallery-grid" id="gallery-image-grid">
+                    <!-- Images will support the Lightbox click event -->
+                    <div class="gallery-item cursor-pointer reveal-on-scroll" data-img-src="assets/hero_bg.png" data-caption="Our rustic warm tavern interior, featuring local Goan timber and soft ambient lighting.">
+                        <img src="assets/hero_bg.png" alt="Ana Tavern Interior" onerror="this.src='https://placehold.co/600x400/163324/FAF6F0?text=Ana+Tavern+Interior'">
+                        <div class="gallery-hover-overlay">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Ana Tavern Vibe</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item cursor-pointer reveal-on-scroll" data-img-src="assets/crispy_pork.png" data-caption="Signature Crispy Pork Belly: slow-roasted, tender inside, with perfectly blistered crackling.">
+                        <img src="assets/crispy_pork.png" alt="Signature Crispy Pork" onerror="this.src='https://placehold.co/600x400/163324/FAF6F0?text=Signature+Crispy+Pork'">
+                        <div class="gallery-hover-overlay">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Crispy Pork Belly</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item cursor-pointer reveal-on-scroll" data-img-src="assets/seafood_dish.png" data-caption="Marisco A Bulhao Pato: local fresh clams sautéed in white wine, olive oil, garlic, and freshly cut coriander.">
+                        <img src="assets/seafood_dish.png" alt="Marisco A Bulhao Pato Clams" onerror="this.src='https://placehold.co/600x400/163324/FAF6F0?text=Marisco+A+Bulhao+Pato'">
+                        <div class="gallery-hover-overlay">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Marisco A Bulhao Pato</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item cursor-pointer reveal-on-scroll" data-img-src="assets/panko_prawns.png" data-caption="Panko Prawns with Wasabi: crisp, golden-fried giant prawns with house-crafted wasabi dip.">
+                        <img src="assets/panko_prawns.png" alt="Panko Prawns" onerror="this.src='https://placehold.co/600x400/163324/FAF6F0?text=Panko+Prawns+with+Wasabi'">
+                        <div class="gallery-hover-overlay">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Panko Prawns</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item cursor-pointer reveal-on-scroll" data-img-src="assets/cocktail_vibe.png" data-caption="Signature Goan Feni & Port Cocktail: A refreshing artisanal mix reflecting Goan-Portuguese fusion heritage.">
+                        <img src="assets/cocktail_vibe.png" alt="Artisanal Cocktail" onerror="this.src='https://placehold.co/600x400/163324/FAF6F0?text=Artisanal+Cocktail'">
+                        <div class="gallery-hover-overlay">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Artisanal Cocktail</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item cursor-pointer reveal-on-scroll" data-img-src="assets/hero_bg.png" data-caption="Choris Fried Rice cooking: Smoked, tangy Goan sausage pieces tossed with aromatic rice and scallions.">
+                        <img src="assets/hero_bg.png" alt="Choris Fried Rice" onerror="this.src='https://placehold.co/600x400/163324/FAF6F0?text=Choris+Fried+Rice'">
+                        <div class="gallery-hover-overlay">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Choris Fried Rice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews" id="reviews">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Guest Opinions</span>
+                    <h2 class="section-title">Google Reviews</h2>
+                    <div class="divider center"></div>
+                </div>
+
+                <!-- Rating Stats Bar -->
+                <div class="rating-dashboard reveal-on-scroll">
+                    <div class="dash-score">
+                        <span class="big-score">4.8</span>
+                        <div class="stars-outer">
+                            <div class="stars-inner" style="width: 96%;"></div>
+                        </div>
+                        <span class="total-reviews">(237 verified reviews)</span>
+                    </div>
+                    <div class="dash-filters" id="reviews-tag-filters">
+                        <span>Popular tags:</span>
+                        <button class="tag-btn active" data-tag="all" id="btn-tag-all">All</button>
+                        <button class="tag-btn" data-tag="pork" id="btn-tag-pork">crispy pork (4)</button>
+                        <button class="tag-btn" data-tag="rice" id="btn-tag-rice">choris rice (7)</button>
+                        <button class="tag-btn" data-tag="lumpia" id="btn-tag-lumpia">lumpia (6)</button>
+                        <button class="tag-btn" data-tag="pudding" id="btn-tag-pudding">sticky toffee (3)</button>
+                    </div>
+                    <div class="dash-actions">
+                        <button class="btn btn-secondary btn-sm" id="btn-write-review-trigger"><i class="fa-solid fa-pen-to-square"></i> Write a Review</button>
+                    </div>
+                </div>
+
+                <!-- Reviews Grid -->
+                <div class="reviews-grid" id="reviews-list-container">
+                    <!-- Rendered by app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Interactive Map Section -->
+        <section class="contact" id="contact">
+            <div class="section-container">
+                <div class="grid grid-2-col">
+                    <div class="contact-details-area reveal-on-scroll">
+                        <span class="section-badge">Find Us</span>
+                        <h2 class="section-title">Location & Contact</h2>
+                        <div class="divider"></div>
+                        <p class="contact-intro">Located in Ella, a historic suburb of Old Goa, just a few minutes from the famous churches.</p>
+                        
+                        <div class="contact-info-grid">
+                            <div class="c-info-card">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>Ella, Old Goa, Goa 403402, India</p>
+                                    <p class="code-ref">Plus Code: FWW8+V3 Ella, Goa</p>
+                                </div>
+                            </div>
+                            
+                            <div class="c-info-card">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <h4>Call/WhatsApp</h4>
+                                    <p><a href="tel:09921207175" id="contact-phone-link">099212 07175</a></p>
+                                    <p class="font-sm text-muted">Reservation inquiries & private events</p>
+                                </div>
+                            </div>
+
+                            <div class="c-info-card">
+                                <i class="fa-solid fa-globe"></i>
+                                <div>
+                                    <h4>Website</h4>
+                                    <p><a href="http://corti21.wix.com" target="_blank" rel="noopener" id="contact-wix-link">corti21.wix.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="c-info-card">
+                                <i class="fa-solid fa-hands-holding"></i>
+                                <div>
+                                    <h4>Our Values</h4>
+                                    <p>LGBTQ+ Friendly · Welcoming Environment · Cozy Setting</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Interactive SVG/JS Map -->
+                    <div class="map-card-wrapper reveal-on-scroll">
+                        <div class="map-header">
+                            <span><i class="fa-solid fa-location-crosshairs text-gold"></i> Neighborhood Explorer</span>
+                            <span class="map-tip">Hover map markers for details</span>
+                        </div>
+                        <div class="map-drawing-container" id="custom-interactive-map">
+                            <!-- SVG custom drawn map representation of Ella, Old Goa -->
+                            <svg viewBox="0 0 500 400" class="interactive-map-svg" id="goa-map-svg">
+                                <path d="M 0 50 Q 150 20 300 60 T 500 30 L 500 0 L 0 0 Z" fill="#2d527c" class="map-water" />
+                                <text x="200" y="25" fill="#a4c2e6" font-size="10" font-style="italic" letter-spacing="2">MANDOVI RIVER</text>
+
+                                <path d="M 100 400 L 100 120 Q 100 80 150 80 L 500 80" fill="none" stroke="#4a4d4b" stroke-width="8" class="map-road" />
+                                <path d="M 100 220 L 500 220" fill="none" stroke="#4a4d4b" stroke-width="6" class="map-road" />
+                                <path d="M 320 80 L 320 400" fill="none" stroke="#4a4d4b" stroke-width="6" class="map-road" />
+                                <text x="110" y="380" fill="#888" font-size="8" transform="rotate(-90 110 380)">National Highway 748</text>
+
+                                <g class="map-marker landmark" data-name="Basilica of Bom Jesus" data-desc="UNESCO World Heritage Site, 5 mins away.">
+                                    <circle cx="150" cy="150" r="16" fill="#D96B43" opacity="0.3" class="marker-pulse" />
+                                    <circle cx="150" cy="150" r="8" fill="#D96B43" />
+                                    <text x="150" y="130" fill="#FAF6F0" font-size="9" text-anchor="middle" font-weight="bold">Basilica of Bom Jesus</text>
+                                </g>
+
+                                <g class="map-marker landmark" data-name="Kadamba Bypass Road" data-desc="Scenic bypass towards Panaji.">
+                                    <circle cx="80" cy="270" r="6" fill="#888" />
+                                    <text x="75" y="290" fill="#aaa" font-size="8" text-anchor="middle">Kadamba Road</text>
+                                </g>
+
+                                <g class="map-marker restaurant-marker" id="restaurant-map-marker" data-name="Ana Bar & Restaurant" data-desc="Cozy 25-covers dining experience by Chef Vasquito. Ella, Goa.">
+                                    <circle cx="320" cy="220" r="28" fill="#D4AF37" opacity="0.15" class="marker-pulse" />
+                                    <circle cx="320" cy="220" r="18" fill="#D4AF37" opacity="0.3" class="marker-pulse" style="animation-delay: 1s;" />
+                                    <circle cx="320" cy="220" r="9" fill="#D4AF37" />
+                                    <circle cx="320" cy="220" r="4" fill="#163324" />
+                                    
+                                    <path d="M 320 211 L 320 185" fill="none" stroke="#D4AF37" stroke-width="2" />
+                                    <rect x="250" y="160" width="140" height="25" rx="4" fill="#163324" stroke="#D4AF37" stroke-width="1" />
+                                    <text x="320" y="176" fill="#D4AF37" font-size="10" text-anchor="middle" font-weight="bold" letter-spacing="0.5">ANA RESTAURANT</text>
+                                </g>
+
+                                <g id="map-details-panel" transform="translate(15, 310)" opacity="0">
+                                    <rect x="0" y="0" width="230" height="75" rx="6" fill="rgba(22, 51, 36, 0.95)" stroke="#D4AF37" stroke-width="1" />
+                                    <text x="15" y="22" id="map-panel-title" fill="#D4AF37" font-size="11" font-weight="bold">Basilica of Bom Jesus</text>
+                                    <text x="15" y="42" id="map-panel-desc-1" fill="#FAF6F0" font-size="9">UNESCO World Heritage Site,</text>
+                                    <text x="15" y="57" id="map-panel-desc-2" fill="#FAF6F0" font-size="9">5 mins away from Ana Bar.</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo-area">
+                        <span class="brand-title text-gold">Ana</span>
+                        <span class="brand-subtitle">by vasquito</span>
+                    </a>
+                    <p class="brand-pitch">An authentic blend of Portuguese spice and Goan soul, serving boutique dinners in historical Ella.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Tripadvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#story">Our History</a></li>
+                        <li><a href="#menu">Menu Highlights</a></li>
+                        <li><a href="#reserve">Reservations</a></li>
+                        <li><a href="#reviews">Guest Experiences</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <p>Wednesday – Monday</p>
+                    <p class="highlight-hours">12:00 PM – 3:30 PM</p>
+                    <p class="highlight-hours">7:00 PM – 10:30 PM</p>
+                    <p class="text-orange"><strong>Closed on Tuesdays</strong></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ana Bar & Restaurant by vasquito. All Rights Reserved. Crafted with love for Goan heritage.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SOMMELIER PAIRING WIZARD MODAL -->
+    <div class="modal-overlay" id="sommelier-wizard-modal" aria-hidden="true">
+        <div class="modal-container sommelier-modal-content">
+            <button class="modal-close" id="sommelier-close-btn" aria-label="Close Sommelier Form">&times;</button>
+            <div class="card-glass-header">
+                <h3><i class="fa-solid fa-wine-glass text-gold"></i> Taste Matcher Engine</h3>
+                <p>Curating your Goan-Portuguese culinary profile</p>
+            </div>
+            
+            <!-- Wizard Step Cards -->
+            <div class="sommelier-wizard-body">
+                <!-- Step 1 -->
+                <div class="sommelier-step active" id="somm-step-1">
+                    <span class="step-num">Step 1 of 3</span>
+                    <h4>Select Your Flavor Direction</h4>
+                    <div class="somm-options-grid">
+                        <div class="somm-opt-card" data-val="spicy">
+                            <i class="fa-solid fa-pepper-hot text-orange"></i>
+                            <h5>Bold & Spicy</h5>
+                            <p>Tangy, punchy Goan chilies, garlic, and toddy vinegars.</p>
+                        </div>
+                        <div class="somm-opt-card" data-val="fresh">
+                            <i class="fa-solid fa-shrimp text-gold"></i>
+                            <h5>Coastal & Fresh</h5>
+                            <p>Olive oil emulsions, white wine glazes, garlic, and sea salt.</p>
+                        </div>
+                        <div class="somm-opt-card" data-val="sweet">
+                            <i class="fa-solid fa-candy-cane"></i>
+                            <h5>Sweet & Delicate</h5>
+                            <p>Warm jaggery accents, mild herbs, creamy butter infusions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="sommelier-step" id="somm-step-2">
+                    <span class="step-num">Step 2 of 3</span>
+                    <h4>What is your core protein preference?</h4>
+                    <div class="somm-options-grid">
+                        <div class="somm-opt-card" data-val="pork">
+                            <i class="fa-solid fa-bone"></i>
+                            <h5>Traditional Pork</h5>
+                            <p>Rich, slow-cooked belly or spiced sausage highlights.</p>
+                        </div>
+                        <div class="somm-opt-card" data-val="seafood">
+                            <i class="fa-solid fa-fish"></i>
+                            <h5>Coastal Seafood</h5>
+                            <p>Morning clams, jumbo prawns, or fresh tender calamari.</p>
+                        </div>
+                        <div class="somm-opt-card" data-val="poultry">
+                            <i class="fa-solid fa-drumstick-bite"></i>
+                            <h5>Poultry & Greens</h5>
+                            <p>Crispy lumpia wraps or juicy steaks with herb sauce.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="sommelier-step" id="somm-step-3">
+                    <span class="step-num">Step 3 of 3</span>
+                    <h4>Choose your beverage base</h4>
+                    <div class="somm-options-grid">
+                        <div class="somm-opt-card" data-val="feni">
+                            <i class="fa-solid fa-bottle-droplet text-gold"></i>
+                            <h5>Goan Cashew Feni</h5>
+                            <p>Local double-distilled heritage spirit with kokum splash.</p>
+                        </div>
+                        <div class="somm-opt-card" data-val="port">
+                            <i class="fa-solid fa-wine-glass"></i>
+                            <h5>Portuguese Port</h5>
+                            <p>Rich, aromatic sweet fortified wine from Douro valley.</p>
+                        </div>
+                        <div class="somm-opt-card" data-val="mocktail">
+                            <i class="fa-solid fa-lemon"></i>
+                            <h5>Botanical Mocktail</h5>
+                            <p>Non-alcoholic ginger lime cordial with carbonated tonic.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div class="sommelier-step" id="somm-step-results">
+                    <div class="pairing-success-banner">
+                        <i class="fa-solid fa-circle-check text-gold"></i>
+                        <h4>Culinary Pairing Curated!</h4>
+                    </div>
+                    
+                    <div class="pairing-results-card">
+                        <div class="pair-section">
+                            <span class="pair-label">Small Plate Pairing:</span>
+                            <strong id="pair-tapas">-</strong>
+                        </div>
+                        <div class="pair-section">
+                            <span class="pair-label">Main Course Pairing:</span>
+                            <strong id="pair-main">-</strong>
+                        </div>
+                        <div class="pair-section">
+                            <span class="pair-label">Beverage Pairing:</span>
+                            <strong id="pair-drink" class="text-gold">-</strong>
+                        </div>
+                        <div class="pair-section">
+                            <span class="pair-label">Taste Profile Code:</span>
+                            <strong id="pair-code" style="letter-spacing: 1px;">-</strong>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-gold btn-block" id="btn-somm-attach">Attach Pairing to Reservation</button>
+                    <button class="btn btn-secondary btn-sm btn-block" style="margin-top: 10px;" id="btn-somm-restart">Start Over</button>
+                </div>
+            </div>
+            
+            <div class="sommelier-wizard-footer" id="somm-wizard-nav">
+                <button class="btn btn-secondary btn-sm" id="btn-somm-prev" disabled>Back</button>
+                <button class="btn btn-gold btn-sm" id="btn-somm-next">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="modal-overlay" id="lightbox-modal" aria-hidden="true">
+        <button class="modal-close" id="lightbox-close-btn" aria-label="Close Lightbox">&times;</button>
+        <div class="lightbox-content">
+            <img src="" id="lightbox-img" alt="Enlarged gallery photo">
+            <p class="lightbox-caption" id="lightbox-caption">Photo details</p>
+        </div>
+    </div>
+
+    <!-- DISH DETAILS MODAL -->
+    <div class="modal-overlay" id="dish-modal" aria-hidden="true">
+        <div class="modal-container dish-modal-content">
+            <button class="modal-close" id="dish-close-btn" aria-label="Close details">&times;</button>
+            <div class="dish-modal-grid">
+                <div class="dish-modal-image" id="dish-modal-img-div"></div>
+                <div class="dish-modal-info">
+                    <span class="badge" id="dish-modal-category">Mains</span>
+                    <h3 id="dish-modal-title">Crispy Pork</h3>
+                    <span class="dish-modal-price" id="dish-modal-price">₹650</span>
+                    <div class="divider"></div>
+                    <p id="dish-modal-desc">Slow roasted, spiced pork belly served with Goan rice and crackling skin.</p>
+                    <div class="dish-meta">
+                        <h5>Key Ingredients:</h5>
+                        <p id="dish-modal-ingredients">Pork belly, local vinegar, feni splash, dry red chilies, garlic.</p>
+                    </div>
+                    <div class="dish-badges" id="dish-modal-badges"></div>
+                    <a href="#reserve" class="btn btn-gold btn-block text-center" id="dish-modal-book-btn">Order at Table</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WRITE REVIEW MODAL -->
+    <div class="modal-overlay" id="review-write-modal" aria-hidden="true">
+        <div class="modal-container review-modal-content">
+            <button class="modal-close" id="review-close-btn" aria-label="Close Review Form">&times;</button>
+            <div class="card-glass-header">
+                <h3>Write a Review</h3>
+                <p>Share your experience at Ana Bar & Restaurant</p>
+            </div>
+            <form id="write-review-form" class="write-review-form">
+                <div class="form-group">
+                    <label for="rev-author">Your Name</label>
+                    <input type="text" id="rev-author" required placeholder="Alevtina Pominova">
+                </div>
+                
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="rating-input-stars" id="rating-input-container">
+                        <i class="fa-solid fa-star star-input cursor-pointer" data-value="1"></i>
+                        <i class="fa-solid fa-star star-input cursor-pointer" data-value="2"></i>
+                        <i class="fa-solid fa-star star-input cursor-pointer" data-value="3"></i>
+                        <i class="fa-solid fa-star star-input cursor-pointer" data-value="4"></i>
+                        <i class="fa-solid fa-star star-input cursor-pointer" data-value="5"></i>
+                    </div>
+                    <input type="hidden" id="rev-rating" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="rev-tag">Specialty Mentioned (Optional)</label>
+                    <select id="rev-tag">
+                        <option value="">None</option>
+                        <option value="pork">Crispy Pork</option>
+                        <option value="rice">Choris Fried Rice</option>
+                        <option value="lumpia">Lumpia</option>
+                        <option value="pudding">Sticky Toffee Pudding</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rev-content">Your Review</label>
+                    <textarea id="rev-content" rows="4" required placeholder="Write details about the food, service and vibes..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-gold btn-block" id="btn-submit-review">Publish Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
