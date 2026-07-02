@@ -1,28 +1,28 @@
 /* ==========================================================================
-   DESIGN SYSTEM & VARIABLES
+   DESIGN SYSTEM & VARIABLES (GOAN CLASSIC COASTAL THEME)
    ========================================================================== */
 :root {
-    --forest-green: #11291d;
-    --forest-green-light: #1c422f;
-    --forest-green-dark: #0a1711;
-    --terracotta: #d36338;
-    --terracotta-hover: #b84e27;
-    --gold: #d6b24c;
-    --gold-hover: #c09d3b;
+    --indigo: #0d2f4f;
+    --indigo-light: #164875;
+    --indigo-dark: #071c30;
+    --terracotta: #e15f41;
+    --terracotta-hover: #c44c30;
+    --gold: #e1b12c;
+    --gold-hover: #cfa122;
     --cream: #FAF6F0;
-    --charcoal: #141715;
-    --card-bg: rgba(28, 66, 47, 0.25);
+    --charcoal: #0a131b;
+    --card-bg: rgba(22, 72, 117, 0.15);
     --border-color: rgba(255, 255, 255, 0.08);
-    --glass-bg: rgba(17, 41, 29, 0.7);
-    --glass-border: rgba(214, 178, 76, 0.2);
+    --glass-bg: rgba(13, 47, 79, 0.7);
+    --glass-border: rgba(225, 177, 44, 0.25);
     --text-main: #FAF6F0;
-    --text-muted: #b4c2b9;
-    --text-dark: #11291d;
+    --text-muted: #95afc0;
+    --text-dark: #0d2f4f;
     --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --font-heading: 'Outfit', 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-gold: 0 4px 20px rgba(214, 178, 76, 0.2);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --shadow-gold: 0 4px 22px rgba(225, 177, 44, 0.2);
 }
 
 /* ==========================================================================
@@ -106,7 +106,7 @@ input, select, textarea, button {
 .custom-cursor-ring {
     width: 30px;
     height: 30px;
-    border: 1px solid rgba(214, 178, 76, 0.4);
+    border: 1px solid rgba(225, 177, 44, 0.4);
     position: fixed;
     top: 0;
     left: 0;
@@ -121,7 +121,7 @@ input, select, textarea, button {
     width: 50px;
     height: 50px;
     border-color: var(--terracotta);
-    background-color: rgba(211, 99, 56, 0.1);
+    background-color: rgba(225, 95, 65, 0.1);
 }
 
 @media (max-width: 1024px) {
@@ -139,7 +139,7 @@ input, select, textarea, button {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--forest-green-dark);
+    background-color: var(--indigo-dark);
     z-index: 99999;
     display: flex;
     align-items: center;
@@ -154,7 +154,7 @@ input, select, textarea, button {
 
 .preloader-content {
     text-align: center;
-    max-width: 300px;
+    max-width: 350px;
 }
 
 .preloader-logo {
@@ -173,12 +173,12 @@ input, select, textarea, button {
 }
 
 .preloader-logo .p-sub {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--cream);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-top: 4px;
+    letter-spacing: 0.18em;
+    margin-top: 6px;
 }
 
 .preloader-progress-bar {
@@ -324,13 +324,13 @@ input, select, textarea, button {
 .btn-primary {
     background-color: var(--terracotta);
     color: var(--cream);
-    box-shadow: 0 4px 15px rgba(211, 99, 56, 0.3);
+    box-shadow: 0 4px 15px rgba(225, 95, 65, 0.3);
 }
 
 .btn-primary:hover {
     background-color: var(--terracotta-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(211, 99, 56, 0.4);
+    box-shadow: 0 6px 20px rgba(225, 95, 65, 0.4);
 }
 
 .btn-secondary {
@@ -341,20 +341,20 @@ input, select, textarea, button {
 
 .btn-secondary:hover {
     background-color: var(--gold);
-    color: var(--forest-green-dark);
+    color: var(--indigo-dark);
     transform: translateY(-2px);
 }
 
 .btn-gold {
     background-color: var(--gold);
-    color: var(--forest-green-dark);
+    color: var(--indigo-dark);
     box-shadow: var(--shadow-gold);
 }
 
 .btn-gold:hover {
     background-color: var(--gold-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(214, 178, 76, 0.35);
+    box-shadow: 0 6px 22px rgba(225, 177, 44, 0.35);
 }
 
 .btn-block {
@@ -395,6 +395,12 @@ input, select, textarea, button {
     50% { height: 18px; }
 }
 
+@keyframes bowlPop {
+    0% { transform: scale(0) translate(-50%, -50%); opacity: 0; }
+    70% { transform: scale(1.15) translate(-50%, -50%); opacity: 0.9; }
+    100% { transform: scale(1) translate(-50%, -50%); opacity: 1; }
+}
+
 .animate-fade-in {
     animation: fadeIn 1s ease-out forwards;
 }
@@ -418,7 +424,7 @@ input, select, textarea, button {
 }
 
 .site-header.scrolled {
-    background-color: rgba(17, 41, 29, 0.95);
+    background-color: rgba(13, 47, 79, 0.96);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     padding: 12px 0;
@@ -448,12 +454,12 @@ input, select, textarea, button {
 }
 
 .brand-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    margin-top: 2px;
+    letter-spacing: 0.15em;
+    margin-top: 4px;
 }
 
 .main-navigation {
@@ -521,7 +527,7 @@ input, select, textarea, button {
         right: -100%;
         width: 75%;
         height: 100vh;
-        background-color: var(--forest-green);
+        background-color: var(--indigo);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -558,7 +564,7 @@ input, select, textarea, button {
     z-index: 1000;
     display: flex;
     align-items: center;
-    background-color: var(--forest-green);
+    background-color: var(--indigo);
     border: 1px solid var(--border-color);
     border-radius: 50px;
     padding: 6px;
@@ -582,7 +588,7 @@ input, select, textarea, button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--forest-green-light);
+    background-color: var(--indigo-light);
     border: 1.5px solid var(--gold);
     display: flex;
     align-items: center;
@@ -652,7 +658,7 @@ input, select, textarea, button {
 .ambient-player.playing .eq-bar:nth-child(4) { animation-delay: 0.4s; }
 
 /* ==========================================================================
-   FLOATING TASTE MATCHER LAUNCHER
+   FLOATING SPICE MATCHER LAUNCHER
    ========================================================================== */
 .sommelier-trigger {
     position: fixed;
@@ -685,7 +691,7 @@ input, select, textarea, button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('assets/hero_bg.png');
+    background-image: url('assets/outdoor_restaurant.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -698,7 +704,7 @@ input, select, textarea, button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(17,41,29,0.5) 0%, rgba(10,23,17,0.92) 100%);
+    background: radial-gradient(circle, rgba(13,47,79,0.4) 0%, rgba(10,19,27,0.92) 100%);
     z-index: 1;
 }
 
@@ -740,7 +746,7 @@ input, select, textarea, button {
     letter-spacing: -0.03em;
     color: var(--cream);
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .hero-subtitle {
@@ -749,6 +755,26 @@ input, select, textarea, button {
     color: var(--gold);
     margin-bottom: 12px;
     letter-spacing: 0.05em;
+}
+
+.hero-rating-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--cream);
+}
+
+.hero-rating-box i {
+    font-size: 1.1rem;
+}
+
+.hero-rating-box .review-count {
+    color: var(--text-muted);
+    font-weight: 400;
 }
 
 .hero-tagline {
@@ -815,7 +841,7 @@ input, select, textarea, button {
    OUR STORY
    ========================================================================== */
 .story {
-    background: linear-gradient(180deg, var(--charcoal) 0%, var(--forest-green-dark) 100%);
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--indigo-dark) 100%);
 }
 
 .story-text-card {
@@ -852,7 +878,7 @@ input, select, textarea, button {
 .story-feat-item:hover {
     border-color: var(--gold);
     transform: translateY(-4px);
-    background-color: rgba(28, 66, 47, 0.4);
+    background-color: rgba(22, 72, 117, 0.3);
 }
 
 .story-feat-item i {
@@ -894,7 +920,7 @@ input, select, textarea, button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, transparent 50%, rgba(10, 23, 17, 0.8) 100%);
+    background: linear-gradient(180deg, transparent 50%, rgba(7, 28, 48, 0.8) 100%);
 }
 
 .image-caption {
@@ -925,7 +951,7 @@ input, select, textarea, button {
     bottom: 0;
     right: 0;
     z-index: 2;
-    border: 4px solid var(--forest-green-dark);
+    border: 4px solid var(--indigo-dark);
 }
 
 .mosaic-img:hover {
@@ -941,10 +967,216 @@ input, select, textarea, button {
 }
 
 /* ==========================================================================
+   INTERACTIVE THALI BUILDER
+   ========================================================================== */
+.thali-builder-section {
+    background-color: var(--indigo-dark);
+    border-top: 1px solid var(--border-color);
+    position: relative;
+}
+
+.thali-controls-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.thali-step-control h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.thali-step-control h4 .badge {
+    padding: 2px 6px;
+}
+
+.thali-opt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 576px) {
+    .thali-opt-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.thali-btn-opt {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-muted);
+}
+
+.thali-btn-opt:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.thali-btn-opt.active {
+    background-color: var(--gold);
+    color: var(--indigo-dark);
+    border-color: var(--gold);
+    font-weight: 600;
+    box-shadow: var(--shadow-gold);
+}
+
+/* Thali Visual Platter Representation */
+.thali-display-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.thali-platter-rim {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #e6b13a 65%, #c89524 100%);
+    border: 6px solid #e1b12c;
+    box-shadow: var(--shadow), 0 0 15px rgba(225, 177, 44, 0.3);
+    padding: 12px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.thali-brass-base {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #8c6614;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.thali-center-carb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--cream);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    transition: var(--transition);
+}
+
+.thali-bowl {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a78028 0%, #7d5e16 100%);
+    border: 2px solid #e1b12c;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 4px;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    animation: bowlPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.thali-fish-fry {
+    top: 15%;
+    left: 50%;
+    background: linear-gradient(135deg, #d35400 0%, #a04000 100%);
+}
+
+.thali-curry {
+    top: 38%;
+    left: 15%;
+    background: linear-gradient(135deg, #e67e22 0%, #b9770e 100%);
+}
+
+.thali-side {
+    top: 38%;
+    right: 15%;
+    transform: translate(50%, -50%);
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    color: #555;
+    border-color: #eee;
+}
+
+.thali-pickle {
+    top: 85%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 0.55rem;
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+}
+
+.thali-platter-details {
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.thali-platter-details h3 {
+    font-size: 1.2rem;
+    color: var(--cream);
+    margin-bottom: 6px;
+}
+
+.thali-price-tag {
+    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.thali-composition-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
    MENU SECTION
    ========================================================================== */
 .menu {
-    background-color: var(--forest-green-dark);
+    background-color: var(--indigo-dark);
     border-top: 1px solid var(--border-color);
 }
 
@@ -976,7 +1208,7 @@ input, select, textarea, button {
 
 .category-btn.active {
     background-color: var(--gold);
-    color: var(--forest-green-dark);
+    color: var(--indigo-dark);
     border-color: var(--gold);
 }
 
@@ -1008,7 +1240,7 @@ input, select, textarea, button {
     transform: translateY(-4px);
     border-color: var(--gold);
     box-shadow: var(--shadow-gold);
-    background-color: rgba(28, 66, 47, 0.4);
+    background-color: rgba(22, 72, 117, 0.3);
 }
 
 .menu-item-thumb {
@@ -1082,9 +1314,9 @@ input, select, textarea, button {
 }
 
 .badge-tag {
-    background-color: rgba(214, 178, 76, 0.15);
+    background-color: rgba(225, 177, 44, 0.15);
     color: var(--gold);
-    border: 1px solid rgba(214, 178, 76, 0.2);
+    border: 1px solid rgba(225, 177, 44, 0.2);
 }
 
 .menu-footer {
@@ -1097,164 +1329,11 @@ input, select, textarea, button {
 }
 
 /* ==========================================================================
-   VIP TASTING MENU TIMELINE
-   ========================================================================== */
-.vip-experience {
-    background: linear-gradient(180deg, var(--forest-green-dark) 0%, var(--charcoal) 100%);
-    border-top: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-}
-
-.section-bg-fade {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 80% 20%, rgba(211, 99, 56, 0.08) 0%, transparent 60%);
-    pointer-events: none;
-}
-
-.timeline-container {
-    position: relative;
-    max-width: 900px;
-    margin: 50px auto 0 auto;
-}
-
-.timeline-line {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: var(--gold);
-    opacity: 0.3;
-    transform: translateX(-50%);
-}
-
-.timeline-step {
-    position: relative;
-    width: 50%;
-    margin-bottom: 50px;
-}
-
-.timeline-step.left {
-    left: 0;
-    padding-right: 50px;
-}
-
-.timeline-step.right {
-    left: 50%;
-    padding-left: 50px;
-}
-
-.timeline-dot {
-    position: absolute;
-    top: 12px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: var(--forest-green);
-    border: 2px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    font-weight: 700;
-    font-size: 0.85rem;
-    z-index: 10;
-}
-
-.timeline-step.left .timeline-dot {
-    right: -16px;
-}
-
-.timeline-step.right .timeline-dot {
-    left: -16px;
-}
-
-.timeline-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 24px;
-    position: relative;
-    transition: var(--transition);
-}
-
-.timeline-card:hover {
-    border-color: var(--gold);
-    box-shadow: var(--shadow-gold);
-    transform: translateY(-2px);
-}
-
-.timeline-course {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 6px;
-}
-
-.timeline-card h3 {
-    font-size: 1.3rem;
-    color: var(--cream);
-    margin-bottom: 8px;
-}
-
-.timeline-card p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.timeline-time {
-    display: inline-block;
-    background-color: rgba(255,255,255,0.04);
-    padding: 2px 10px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-top: 14px;
-    color: var(--terracotta);
-}
-
-@media (max-width: 768px) {
-    .timeline-line {
-        left: 20px;
-    }
-    
-    .timeline-step {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    
-    .timeline-step.left {
-        left: 0;
-        padding-right: 0;
-        padding-left: 45px;
-    }
-    
-    .timeline-step.right {
-        left: 0;
-        padding-left: 45px;
-    }
-    
-    .timeline-step.left .timeline-dot,
-    .timeline-step.right .timeline-dot {
-        left: 4px;
-        right: auto;
-    }
-}
-
-/* ==========================================================================
    RESERVATIONS & VISUAL FLOOR PLAN
    ========================================================================== */
 .reserve {
     position: relative;
-    background-image: url('assets/hero_bg.png');
+    background-image: url('assets/outdoor_restaurant.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1266,7 +1345,7 @@ input, select, textarea, button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 23, 17, 0.96) 0%, rgba(20, 23, 21, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(10, 19, 27, 0.96) 0%, rgba(13, 20, 27, 0.9) 100%);
     z-index: 1;
 }
 
@@ -1342,7 +1421,7 @@ input, select, textarea, button {
 /* Floor Plan Blueprint Styling */
 .floor-plan-wrapper {
     margin-bottom: 24px;
-    background-color: rgba(10, 23, 17, 0.7);
+    background-color: rgba(7, 19, 27, 0.7);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 6px;
     padding: 15px;
@@ -1359,15 +1438,18 @@ input, select, textarea, button {
 }
 
 .floor-table .table-outline {
-    fill: rgba(28, 66, 47, 0.3);
+    fill: rgba(22, 72, 117, 0.2);
     stroke: var(--text-muted);
     stroke-width: 1.5;
     transition: var(--transition);
 }
 
-.floor-table .table-fill {
-    fill: var(--text-muted);
-    transition: var(--transition);
+.floor-table.rect-table .table-outline {
+    stroke: #54a0ff; /* AC Room blue tint default */
+}
+
+.floor-table.round-table .table-outline {
+    stroke: #ff9f43; /* Veranda orange tint default */
 }
 
 .floor-table .chair {
@@ -1380,10 +1462,6 @@ input, select, textarea, button {
 .floor-table.available .table-outline {
     stroke: #2ecc71;
     fill: rgba(46, 204, 113, 0.08);
-}
-
-.floor-table.available .table-fill {
-    fill: #2ecc71;
 }
 
 .floor-table.available .chair {
@@ -1400,19 +1478,11 @@ input, select, textarea, button {
     fill: rgba(231, 76, 60, 0.05);
 }
 
-.floor-table.reserved .table-fill {
-    fill: #e74c3c;
-}
-
 .floor-table.selected .table-outline {
     stroke: var(--gold);
-    fill: rgba(214, 178, 76, 0.25);
+    fill: rgba(225, 177, 44, 0.25);
     stroke-width: 2.5;
-    filter: drop-shadow(0 0 6px rgba(214, 178, 76, 0.5));
-}
-
-.floor-table.selected .table-fill {
-    fill: var(--gold);
+    filter: drop-shadow(0 0 6px rgba(225, 177, 44, 0.5));
 }
 
 .floor-table.selected .chair {
@@ -1422,6 +1492,26 @@ input, select, textarea, button {
 .floor-table:hover:not(.reserved) .table-outline {
     stroke: var(--cream);
     transform: scale(1.02);
+}
+
+/* Parking Slots Styling */
+.parking-slot {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.parking-slot rect {
+    transition: var(--transition);
+}
+
+.parking-slot.occupied {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.parking-slot:hover:not(.occupied) rect {
+    fill: rgba(46, 204, 113, 0.35);
+    stroke: var(--cream);
 }
 
 .floor-legend {
@@ -1446,7 +1536,7 @@ input, select, textarea, button {
 .leg-color.reserved { background-color: #e74c3c; }
 
 .blueprint-sync-alert {
-    background-color: rgba(214, 178, 76, 0.05);
+    background-color: rgba(225, 177, 44, 0.05);
     border-left: 2px solid var(--gold);
     padding: 8px 12px;
     font-size: 0.75rem;
@@ -1515,7 +1605,7 @@ input, select, textarea, button {
 }
 
 .form-group select option {
-    background-color: var(--forest-green-dark);
+    background-color: var(--indigo-dark);
     color: var(--cream);
 }
 
@@ -1618,7 +1708,7 @@ input, select, textarea, button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(17, 41, 29, 0.85);
+    background-color: rgba(13, 47, 79, 0.85);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1658,7 +1748,7 @@ input, select, textarea, button {
    REVIEWS SECTION
    ========================================================================== */
 .reviews {
-    background-color: var(--forest-green-dark);
+    background-color: var(--indigo-dark);
     border-top: 1px solid var(--border-color);
 }
 
@@ -1761,7 +1851,7 @@ input, select, textarea, button {
 
 .tag-btn.active {
     background-color: var(--gold);
-    color: var(--forest-green-dark);
+    color: var(--indigo-dark);
     border-color: var(--gold);
 }
 
@@ -1847,7 +1937,7 @@ input, select, textarea, button {
 }
 
 .rev-owner-response {
-    background-color: rgba(214, 178, 76, 0.05);
+    background-color: rgba(225, 177, 44, 0.05);
     border-left: 2px solid var(--gold);
     border-radius: 2px;
     padding: 12px 14px;
@@ -1869,7 +1959,7 @@ input, select, textarea, button {
    CONTACT & INTERACTIVE MAP
    ========================================================================== */
 .contact {
-    background: linear-gradient(180deg, var(--forest-green-dark) 0%, var(--charcoal) 100%);
+    background: linear-gradient(180deg, var(--indigo-dark) 0%, var(--charcoal) 100%);
     border-top: 1px solid var(--border-color);
 }
 
@@ -1935,7 +2025,7 @@ input, select, textarea, button {
 }
 
 .map-header {
-    background-color: rgba(17, 41, 29, 0.4);
+    background-color: rgba(13, 47, 79, 0.4);
     padding: 12px 18px;
     border-bottom: 1px solid var(--border-color);
     display: flex;
@@ -1953,14 +2043,14 @@ input, select, textarea, button {
 
 .map-drawing-container {
     padding: 15px;
-    background-color: #1a221d;
+    background-color: #0c1822;
     position: relative;
 }
 
 .interactive-map-svg {
     width: 100%;
     height: 100%;
-    background-color: #1e2823;
+    background-color: #0e1e2b;
     border-radius: 4px;
 }
 
@@ -2009,7 +2099,7 @@ svg text {
    FOOTER
    ========================================================================== */
 .site-footer {
-    background-color: var(--forest-green-dark);
+    background-color: var(--indigo-dark);
     border-top: 1px solid var(--border-color);
 }
 
@@ -2064,7 +2154,7 @@ svg text {
 }
 
 .social-links a:hover {
-    color: var(--forest-green-dark);
+    color: var(--indigo-dark);
     background-color: var(--gold);
     border-color: var(--gold);
     transform: translateY(-2px);
@@ -2125,7 +2215,7 @@ svg text {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 23, 17, 0.95);
+    background-color: rgba(7, 28, 48, 0.95);
     z-index: 2000;
     display: none;
     align-items: center;
@@ -2141,7 +2231,7 @@ svg text {
 }
 
 .modal-container {
-    background-color: var(--forest-green);
+    background-color: var(--indigo-dark);
     border: 1px solid var(--gold);
     border-radius: 8px;
     width: 100%;
@@ -2355,13 +2445,13 @@ svg text {
 
 .somm-opt-card:hover {
     border-color: var(--gold);
-    background-color: rgba(28, 66, 47, 0.4);
+    background-color: rgba(22, 72, 117, 0.4);
     transform: translateY(-2px);
 }
 
 .somm-opt-card.selected {
     border-color: var(--gold);
-    background-color: rgba(214, 178, 76, 0.12);
+    background-color: rgba(225, 177, 44, 0.12);
     box-shadow: var(--shadow-gold);
 }
 
@@ -2500,7 +2590,7 @@ svg text {
 }
 
 .mb-select-btn.selected {
-    background-color: rgba(214, 178, 76, 0.15);
+    background-color: rgba(225, 177, 44, 0.15);
     border-color: var(--gold);
     color: var(--gold);
     box-shadow: var(--shadow-gold);
@@ -2517,14 +2607,13 @@ svg text {
         display: block;
     }
     
-    /* Stack floating widgets on mobile to prevent overlaps */
     .ambient-player {
         bottom: 16px;
         left: 16px;
     }
     
     .sommelier-trigger {
-        bottom: 78px; /* Stacked right above player */
+        bottom: 78px;
         left: 16px;
         right: auto;
     }
